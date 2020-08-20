@@ -15,9 +15,7 @@ character = {
 // - A variable named `age` is predefined with value 20. Add a new key named `character-age` with the value of `age` variable i.e 20 (don't use the value 20)
 
 let age = 20;
-character = {
-    "character-age" : age
-}
+character["character-age"] = age;
 
 // - Add a new key `sur name` with the value of the surname of the character i.e "Stark". (Don't remove the space between `sur` and `name`)
 character["Sur name"] = "Stark";
@@ -28,8 +26,8 @@ character.title = "Lady of Winterfall";
 // - Add another property named `greet` and value should be a function when called should alert `I am [NAME HERE] and my title is [TITLE HERE]`.
 
 character.greet = 
-    function greet(){
-        `I am ${characterName} and my title is ${title}`
+    function (){
+        alert(`I am ${character.characterName} and my title is ${character.title}`);
     }
 
 
@@ -39,11 +37,11 @@ character["isFemale"] = true;
 
 // - Execute the function stored in the greet key of the character object
 
-character.greet
+character.greet();
 
 //  - Change the method `greet` to now alert `She is [NAME HERE] and her title is [TITLE HERE]`.
 
-character.greet = function greet(){
+character.greet = function (){
     alert(`She is ${name} and her title is ${title}`)
 }
 
@@ -53,12 +51,12 @@ character.greet = function greet(){
 character.greet
 //  - Add a new property in the character object `isAdult`. The value will be true if age is greater than 18 or it will be false.
 
-character["isAdult"] = age > 18 ? true :false;
+character["isAdult"] = character.age > 18 ? true :false;
 
 // - Add a new method (function inside objects are called methods) named `changeIsAdult`. When called should be able to flip the value of `isAdult` from true to false and false to true.
 
-character["changeIsAdult"] = function changeIsAdult(){
-    return `${isAdult}.{reverse}`
+character["changeIsAdult"] = function (){
+   character.isAdult = !character.isAdult;   
 }
 
 // - Add a new key with the name stored in variable `keyName` defined below i.e `playedBy` (use [] for computed property) and the value of "Maisie Williams"
@@ -71,7 +69,7 @@ character[keyName] = "Maisie Williams";
 
 alert(character[keyName]);
 // - Using the function `console.log` log the value of the key `42`. You don't have to add the key
-console.log(character["42"]);
+console.log(character[42]);
 // - Add a new key named `totalSeasons` with the value of `1 + 2 + 3 + 2`. Use this expression
 
 character.totalSeasons = 1+2+3+2;
