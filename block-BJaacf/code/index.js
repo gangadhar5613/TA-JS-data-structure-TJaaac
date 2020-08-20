@@ -7,30 +7,31 @@ let arrayNumbers = [1,2,3,4,5,10];
 let sum =0;
 for(let number of arrayNumbers){
     sum = sum+number;
-    console.log(sum);
+   
 }
+console.log(sum);
 
 // 3. Calculate the average of array items and print it to the console using console.log()
 
-let average = 0;
-for(let number of arrayNumbers){
-    average = (average+number)/arrayNumbers.length;
-    console.log(average);
-}
+console.log(sum/arrayNumbers.length);
 
 // 4. Find the highest number in the array and print it to the console using console.log()
 
 let highestNumber = arrayNumbers[0];
-for( i=0;i<= arrayNumbers.length;i++){
-    highestNumber = highestNumber < arrayNumbers[i] ? console.log(arrayNumbers[i]) : console.log(highestNumber);
-}
+for(let number of arrayNumbers){
+    if( number > highestNumber){
+        highestNumber = number;
+    }
+}console.log(highestNumber);
 
 // 5. Find the lowest number in the array and print it to the console using console.log()
 
 let lowestNumber = arrayNumbers[0];
-for( i=0;i<= arrayNumbers.length;i++){
-    lowestNumber = lowestNumber < arrayNumbers[i] ? console.log(arrayNumbers[i]) : lowestNumber;
-}
+for( let number of arrayNumbers){
+    if( number < lowestNumber){
+        lowestNumber = number;
+    }
+}console.log(lowestNumber);
 
 // 6. Find the even numbers in the array and print them to the console using console.log()
 
@@ -61,7 +62,9 @@ for (let number of arrayNumbers){
 
 // 9. Log all the element of the array one by one
 
-console.log(arrayNumbers);
+for(let number of arrayNumbers){
+    console.log(number);
+}
 
 // 10. Find all the number in the array that is divisible by 3
 
